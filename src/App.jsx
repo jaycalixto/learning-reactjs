@@ -9,8 +9,10 @@ import Card from './components/layout/Card';
 export default function App() {
     return (
         <div id="ap">
-            <Card titulo="exemplo de card"></Card>
-            <Aleatorio maximo={100} minimo={1} />
+            <Card titulo="Desafio aleatório">
+                <Aleatorio maximo={100} minimo={1} />
+            </Card>
+            <Card />
             <Fragmento />
             <Primeiro></Primeiro>
             <ComParametro
