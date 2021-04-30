@@ -3,10 +3,14 @@ import React from 'react';
 import Primeiro from './components/basicos/Primeiro';
 import ComParametro from './components/basicos/ComParametro';
 import Fragmento from './components/basicos/Fragmento';
+import Aleatorio from './components/basicos/Aleatorio';
+import Card from './components/layout/Card';
 
 export default function App() {
     return (
         <div id="ap">
+            <Card titulo="exemplo de card"></Card>
+            <Aleatorio maximo={100} minimo={1} />
             <Fragmento />
             <Primeiro></Primeiro>
             <ComParametro
