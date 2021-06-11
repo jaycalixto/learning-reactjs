@@ -18,7 +18,7 @@ export function MyElse ({ children }) {
 }
 
 MyIf.propTypes = {
-    test: PropTypes.bool,
+    test: PropTypes.any,
     children: PropTypes.any
 };
 
