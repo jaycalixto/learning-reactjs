@@ -15,6 +15,7 @@ import UsuarioInfo from './components/condicional/UsuarioInfo';
 import DiretaPai from './components/comunicacao/DiretaPai';
 import IndiretaPai from './components/comunicacao/IndiretaPai';
 import Input from './components/formulario/Input';
+import Contador from './components/contador/Contador';
 
 export default function App() {
     return (
@@ -22,6 +23,11 @@ export default function App() {
             <h1>Fundamentos React</h1>
 
             <div className="Cards">
+                <Card titulo="#12 - Contador" color="#A1AF00">
+                    <Contador numeroInicial={10} passo={5}></Contador>
+                    <Contador numeroInicial={1}></Contador>
+                </Card>
+
                 <Card titulo="#11 - Componente controlado (Input)" color="#2A1AA1">
                     <Input></Input>
                 </Card>
