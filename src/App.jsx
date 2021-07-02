@@ -18,65 +18,62 @@ import Input from './components/formulario/Input';
 import Contador from './components/contador/Contador';
 
 export default function App() {
-    return (
-        <div className="App">
-            <h1>Fundamentos React</h1>
+  return (
+    <div className="App">
+      <h1>Fundamentos React</h1>
 
-            <div className="Cards">
-                <Card titulo="#12 - Contador" color="#A1AF00">
-                    <Contador numeroInicial={10} passo={5}></Contador>
-                    <Contador numeroInicial={1}></Contador>
-                </Card>
+      <div className="Cards">
+        <Card titulo="#12 - Contador" color="#A1AF00">
+          <Contador numeroInicial={10} passo={5} />
+          <Contador numeroInicial={1} />
+        </Card>
 
-                <Card titulo="#11 - Componente controlado (Input)" color="#2A1AA1">
-                    <Input></Input>
-                </Card>
-                <Card titulo="#10 - Comunicação indireta" color="#1AA12A">
-                    <IndiretaPai></IndiretaPai>
-                </Card>
-                <Card titulo="#09 - Comunicação direta" color="#123475">
-                    <DiretaPai></DiretaPai>
-                </Card>
-                <Card titulo="#08 - Renderização condicional" color="#913204">
-                    <ParOuImpar numero={13}></ParOuImpar>
-                    <UsuarioInfo usuario={ { nome: 'UserName' } }></UsuarioInfo>
-                    <UsuarioInfo usuario={ { email: 'a@a.com' } }></UsuarioInfo>
-                </Card>
+        <Card titulo="#11 - Componente controlado (Input)" color="#2A1AA1">
+          <Input />
+        </Card>
+        <Card titulo="#10 - Comunicação indireta" color="#1AA12A">
+          <IndiretaPai />
+        </Card>
+        <Card titulo="#09 - Comunicação direta" color="#123475">
+          <DiretaPai />
+        </Card>
+        <Card titulo="#08 - Renderização condicional" color="#913204">
+          <ParOuImpar numero={13} />
+          <UsuarioInfo usuario={{ nome: 'UserName' }} />
+          <UsuarioInfo usuario={{ email: 'a@a.com' }} />
+        </Card>
 
-                <Card titulo="#07 - Desafio repetição" color="#A1A1D1">
-                    <TabelaProdutos></TabelaProdutos>
-                </Card>
+        <Card titulo="#07 - Desafio repetição" color="#A1A1D1">
+          <TabelaProdutos />
+        </Card>
 
-                <Card titulo="#06 - Repetição" color="#FF4C65">
-                    <ListaAlunos></ListaAlunos>
-                </Card>
+        <Card titulo="#06 - Repetição" color="#FF4C65">
+          <ListaAlunos />
+        </Card>
 
-                <Card titulo="#05 - Componente com filhos" color="#E86981">
-                    <Familia sobrenome="Gomez" >
-                        <FamiliaMembro nome="Michelle"></FamiliaMembro>
-                        <FamiliaMembro nome="Bergamota"></FamiliaMembro>
-                    </Familia>
-                </Card>
+        <Card titulo="#05 - Componente com filhos" color="#E86981">
+          <Familia sobrenome="Gomez">
+            <FamiliaMembro nome="Michelle" />
+            <FamiliaMembro nome="Bergamota" />
+          </Familia>
+        </Card>
 
-                <Card titulo="#04 - Desafio aleatório" color="#588">
-                    <Aleatorio maximo={100} minimo={1} />
-                </Card>
+        <Card titulo="#04 - Desafio aleatório" color="#588">
+          <Aleatorio maximo={100} minimo={1} />
+        </Card>
 
-                <Card titulo="#03 - Fragmento" color="#FA6900">
-                    <Fragmento />
-                </Card>
+        <Card titulo="#03 - Fragmento" color="#FA6900">
+          <Fragmento />
+        </Card>
 
-                <Card titulo="#02 - Com parâmetro" color="#E8B71A">
-                    <ComParametro
-                        titulo="sou um titulo com muitos caracteres"
-                        subtitulo="subtitulo maneiro com bastante caracteres"
-                    />
-                </Card>
-                
-                <Card titulo="#01 - Primeiro componente" color="#588C73">
-                    <Primeiro />
-                </Card>
-            </div>
-        </div>
-    );
+        <Card titulo="#02 - Com parâmetro" color="#E8B71A">
+          <ComParametro titulo="sou um titulo com muitos caracteres" subtitulo="subtitulo maneiro com bastante caracteres" />
+        </Card>
+
+        <Card titulo="#01 - Primeiro componente" color="#588C73">
+          <Primeiro />
+        </Card>
+      </div>
+    </div>
+  );
 }
