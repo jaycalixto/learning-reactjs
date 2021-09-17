@@ -19,6 +19,9 @@ function Menu() {
           <li>
             <Link to="/about">Sobre</Link>
           </li>
+          <li>
+            <Link to="/not-found">Não existe</Link>
+          </li>
         </ul>
       </nav>
     </aside>

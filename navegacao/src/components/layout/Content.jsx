@@ -2,6 +2,7 @@ import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import About from '../../views/examples/About';
 import Param from '../../views/examples/Param';
+import NotFound from '../../views/examples/NotFound';
 import Home from '../../views/examples/Home';
 import './Content.css';
 
@@ -15,8 +16,11 @@ function Content() {
         <Route path="/param/:id">
           <Param />
         </Route>
-        <Route path="/">
+        <Route exact path="/">
           <Home />
+        </Route>
+        <Route path="*">
+          <NotFound />
         </Route>
       </Switch>
     </main>
