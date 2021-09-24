@@ -16,8 +16,8 @@ function Button({ children, onClick }) {
   return <button className="btn" onClick={onClick}>{children}</button>;
 }
 
-function Input({ onChange, value }) {
-  return <input type="text" className="input" value={value} onChange={onChange} />;
+function Input({ onChange, value, type}) {
+  return <input type={type || "text"} className="input" value={value} onChange={onChange} />;
 }
 
 export { UseStateDiv, DivCenter, SpanText, Button, Input };
