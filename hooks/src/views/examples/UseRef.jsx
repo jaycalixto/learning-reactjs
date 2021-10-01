@@ -3,7 +3,17 @@ import PageTitle from '../../components/layout/PageTitle'
 import SectionTitle from '../../components/layout/SectionTitle';
 
 const merge = (s1, s2) => {
-  return s1+s2;
+  const maxLen = Math.max(s1.length, s2.length);
+  var result = '';
+  for(var i = 0; i < maxLen; i++){
+    if(i < s1.length) {
+      result += s1[i];
+    }
+    if(i < s2.length) {
+      result += s2[i];
+    }
+  }
+  return result;
 };
 
 const UseRef = (props) => {
