@@ -16,6 +16,10 @@ const merge = (s1, s2) => {
   return result;
 };
 
+const professorMerge = (s1, s2) => {
+  return [...s1].map((e, i) => `${e}${s2[i] || ''}`).join('');
+};
+
 const UseRef = (props) => {
   const [value1, setValue1] = useState('');
   const [value2, setValue2] = useState('');
@@ -46,6 +50,9 @@ const UseRef = (props) => {
           <span className="text">{merge(value1,value2)} &gt;</span>
           <span className="text red">{count.current}</span>
           <span className="text">&lt;</span>
+          <br />
+          <span className="text">Prof merge:</span>
+          <span className="text">{professorMerge(value1,value2)}</span>
         </div>
         <input type="text" className="input" ref={myInput1} value={value1} onChange={(e) => setValue1(e.target.value) } />
       </div>
