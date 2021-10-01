@@ -20,6 +20,12 @@ const UseEffect = (props) => {
     setFatorial(calcFatorial(number));
   }, [number]);
 
+  const [status, setStatus] = useState('Impar');
+
+  useEffect(() => {
+    setStatus(number % 2 === 0 ? 'Par' : 'Ímpar');
+  },[number])
+
   return (
     <div className="UseEffect">
       <PageTitle
@@ -39,7 +45,8 @@ const UseEffect = (props) => {
 
       <SectionTitle title="Exercício 02" />
       <DivCenter>
-        TODO
+        <span className="text">Par ou impar:</span>
+        <span className="text red">{status}</span>
       </DivCenter>
 
     </div>
