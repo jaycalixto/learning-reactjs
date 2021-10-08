@@ -1,5 +1,35 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-function Delete_Me() {
-  return (<p>Hi</p>);
+const initialState = {
+  number: 1,
+  text: 'Context + hooks',
+};
+const AppContext = React.createContext(initialState);
+
+function Store({ children }) {
+  const [state, setState] = useState(initialState);
+
+  function updateState(key, value) {
+    setState({
+      ...state,
+      [key]: value
+    });
+  }
+
+  return (
+    <AppContext.Provider value={
+    {
+      number: state.number,
+      text: state.text,
+      setNumber: n => updateState('number', n),
+      setText: t => updateState('text', t)
+    }}>
+      {children}
+    </AppContext.Provider>
+  );
 }
+
+export { AppContext };
+
+export default Store;
+
