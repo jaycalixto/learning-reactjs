@@ -1,54 +1,6 @@
 import React, { useReducer } from 'react';
 import PageTitle from '../../components/layout/PageTitle';
-
-const initialState = {
-  thing: 'abc',
-  number: 0,
-  other: 'a',
-  user: null,
-};
-
-const MULTIPLY_7 = 'MULTIPLY_7';
-const DIVIDE_25 = 'DIVIDE_25';
-const PARSE_TO_INT = 'PARSE TO INT';
-const ADD_N = 'Add N number';
-
-function reducer(state, action) {
-  switch(action.type) {
-    case 'number_add2':
-      return {
-        ...state,
-        number: state.number + 2,
-      };
-    case 'login':
-      return {
-        ...state,
-        user: { name: action.payload },
-      };
-    case MULTIPLY_7:
-      return {
-        ...state,
-        number: state.number * 7,
-      };
-    case DIVIDE_25:
-      return {
-        ...state,
-        number: state.number / 25,
-      };
-    case PARSE_TO_INT:
-      return {
-        ...state,
-        number: parseInt(state.number),
-      };
-    case ADD_N:
-      return {
-        ...state,
-        number: state.number + action.payload,
-      };
-    default:
-      return state;
-  }
-}
+import {initialState, reducer, Types, Multiply7 } from '../../store';
 
 const UseReducer = (props) => {
   const [state, dispatch] = useReducer(reducer, initialState);
@@ -69,23 +21,23 @@ const UseReducer = (props) => {
         <div>
           <button
             className="btn"
-            onClick={() => dispatch({type: 'login', payload: 'New user'}) }
+            onClick={() => dispatch({type: Types.LOGIN, payload: 'New user'}) }
           >
             login
           </button>
-          <button className="btn" onClick={() => dispatch({type: 'number_add2'}) }>
+          <button className="btn" onClick={() => dispatch({type: Types.ADD_N, payload: 2}) }>
             +2
           </button>
-          <button className="btn" onClick={() => dispatch({type: MULTIPLY_7}) }>
+          <button className="btn" onClick={() => Multiply7(dispatch) }>
             *7
           </button>
-          <button className="btn" onClick={() => dispatch({type: DIVIDE_25}) }>
+          <button className="btn" onClick={() => dispatch({type: Types.DIVIDE_25}) }>
             /25
           </button>
-          <button className="btn" onClick={() => dispatch({type: PARSE_TO_INT}) }>
+          <button className="btn" onClick={() => dispatch({type: Types.PARSE_TO_INT}) }>
             Int
           </button>
-          <button className="btn" onClick={() => dispatch({type: ADD_N, payload: -9}) }>
+          <button className="btn" onClick={() => dispatch({type: Types.ADD_N, payload: -9}) }>
             -9
           </button>
         </div>
