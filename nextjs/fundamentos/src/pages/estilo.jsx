@@ -1,11 +1,12 @@
 import styles from '../styles/Estilo.module.css';
-import Link from 'next/link';
+import Layout from '../components/Layout';
 
 export default function Estilo() {
   return (
-    <div className={styles.roxo}>
-      <Link href="/">Voltar</Link>
-      <h1>Estilo usando CSS Module</h1>
-    </div>
+    <Layout titulo="Exemplo de CSS modularizado">
+      <div className={styles.roxo}>
+        <h1>Estilo usando CSS Module</h1>
+      </div>
+    </Layout>
   );
 }
